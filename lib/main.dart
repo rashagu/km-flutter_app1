@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:myapp/components/myBt1.dart';
 
 void main() {
   runApp(
@@ -45,6 +46,45 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ],
             ),
           ),
+          Container(
+            // padding: EdgeInsets.only(left: 32, right: 32),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                MyBt(myProps: MyBtContent('w')),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: const TextStyle( fontSize: 14 ),
+                  ),
+                  onPressed: (){
+                    print('123');
+                  },
+                  child: Column(
+                    children: [
+                      Icon(Icons.alarm),
+                      Text('Route'),
+                    ],
+                  ),
+                ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: const TextStyle( fontSize: 14 ),
+                  ),
+                  onPressed: (){
+                    print('123');
+                  },
+                  child: Column(
+                    children: [
+                      Icon(Icons.toc),
+                      Text('Share'),
+                    ],
+                  ),
+                ),
+
+              ],
+            ),
+          )
         ],
       )
     );
@@ -55,14 +95,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 // 传递简单的字符串
 class MySimpText1 extends StatelessWidget{
   final String myTextContent;
-  MySimpText1({Key? key,required this.myTextContent}):super(key:key);
+  MySimpText1({Key? key,required this.myTextContent, String? myTextContent2}):super(key:key);
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Text(myTextContent, style: TextStyle(color: Colors.black, fontSize: 12,decoration: TextDecoration.none));
+    return Text(myTextContent, style: TextStyle(color: Colors.black, fontSize: 14,decoration: TextDecoration.none));
   }
-
 }
 
 // 传递一个对象
